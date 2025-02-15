@@ -1,0 +1,77 @@
+services:
+  database:
+    container_name: db-mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - project-network
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    restart: always
+    networks:
+      - project-network
+    environment:
+      - PORT=4000
+      - URL_MONGO_DATABASE=mongodb://db-mongo:27017/
+      - DATABASE_NAME=TFSDataBase
+      - NAMEDEFAULT=root
+      - PASSWORDDEFAULT=123456
+      - JWT_SECRET=secret12345678901234567890
+    depends_on:
+      - database
+  frontend:
+    container_name: frontend
+
+    volumes:
+      - frontend-volume:/var/www/html
+
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    ports:
+      - "3000:3000"
+
+    networks:
+      - project-network
+
+    restart: always
+
+  nginx:
+    container_name: nginx-container
+    
+    volumes:
+      - frontend-volume:/var/www/html
+    
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    
+    ports:
+      - 80:80
+    
+    networks:
+      - project-network
+
+    restart: always
+
+    depends_on:
+      - database
+      - backend
+
+networks:
+  project-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  frontend-volume:
