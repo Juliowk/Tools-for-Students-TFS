@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ContentsMobile from "./mobile";
 import ContentsDesktop from "./desktop";
 
-function HomeComponent() {
+function LoginComponent() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -21,4 +21,4 @@ function HomeComponent() {
   );
 }
 
-export default HomeComponent;
+export default LoginComponent;
