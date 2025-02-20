@@ -21,32 +21,33 @@ const UserListMobile = () => {
 
   const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    const handle = async () => {
-      try {
-        const response = await fetch(`${url}/users/`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+  const handle = async () => {
+    try {
+      const response = await fetch(`${url}/users/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-        if (!response.ok) {
-          const data = await response.json();
-          throw new Error(data);
-        }
-
-        setData(await response.json());
-      } catch (error) {
-        if (error instanceof Error) {
-          setError(error.message);
-        }
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data);
       }
-    };
 
+      setData(await response.json());
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      }
+    }
+  };
+
+  useEffect(() => {
     handle();
-  }, [url, token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="mb-5 ">
