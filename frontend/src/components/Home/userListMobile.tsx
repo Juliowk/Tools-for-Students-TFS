@@ -4,9 +4,7 @@ import { BiError } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 
 interface User {
-  _id: string;
   name: string;
-  password: string;
   occupation: string;
 }
 
@@ -62,13 +60,18 @@ const UserListMobile = () => {
         Users list <FaUserAlt size={28} />
       </p>
 
-      <div>
+      <div
+        style={{
+          height: `${Math.max(100, data.length * 20)}vh`,
+          overflowY: "auto",
+        }}
+      >
         {Array.isArray(data) && data.length > 0 ? (
           data.map((user, index) => (
-            <Card key={index} className="mb-3 shadow p-2">
+            <Card key={index} className="mb-3 shadow-sm p-2">
               <Card.Body>
                 <Row>
-                  <Col>
+                  <Col xs={7}>
                     <label htmlFor={`name-${index}`}>
                       <strong>Username:</strong>
                     </label>
@@ -76,9 +79,9 @@ const UserListMobile = () => {
                       {user.name}
                     </p>
                   </Col>
-                  <Col>
+                  <Col xs={5}>
                     <label htmlFor={`occupation-${index}`}>
-                      <strong>Your Occupation:</strong>
+                      <strong>Your Occupartion:</strong>
                     </label>
                     <p id={`occupation-${index}`} className="fs-5">
                       {user.occupation}

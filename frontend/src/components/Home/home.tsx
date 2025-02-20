@@ -16,7 +16,7 @@ const HomeComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <Container>{isMobile ? <HomeMobile/> : <HomeDesktop />}</Container>;
+  return <Container>{isMobile ? <HomeMobile /> : <HomeDesktop />}</Container>;
 };
 
 export default HomeComponent;
