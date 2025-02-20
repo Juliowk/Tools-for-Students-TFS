@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import HomeDesktop from "./desktop";
 import HomeMobile from "./mobile";
+import NavbarHome from "./navbarHome";
 
 const HomeComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -16,7 +17,21 @@ const HomeComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <Container>{isMobile ? <HomeMobile /> : <HomeDesktop />}</Container>;
+  return (
+    <Container>
+      {isMobile ? (
+        <>
+          <NavbarHome />
+          <HomeMobile />
+        </>
+      ) : (
+        <>
+          <NavbarHome />
+          <HomeDesktop />
+        </>
+      )}
+    </Container>
+  );
 };
 
 export default HomeComponent;
