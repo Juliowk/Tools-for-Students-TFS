@@ -7,8 +7,8 @@ const ContentsMobile = () => {
       <Row className="mt-5">
         <img src="/loginImage.svg" />
       </Row>
-      <Row className="mt-5">
-        <FormLogin />
+      <Row className="mt-3" style={{height: "60vh"}}>
+        <FormLogin/>
       </Row>
     </>
   );

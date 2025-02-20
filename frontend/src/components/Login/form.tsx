@@ -54,10 +54,10 @@ const FormLogin = () => {
   };
 
   return (
-    <div>
+    <>
       {error && (
         <Alert key={"danger"} variant={"danger"}>
-          <BiError/> {error}
+          <BiError /> {error}
         </Alert>
       )}
       <Form className="w-100" onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ const FormLogin = () => {
           </Form.Group>
         </Row>
       </Form>
-    </div>
+    </>
   );
 };
 
