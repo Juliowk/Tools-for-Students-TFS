@@ -62,7 +62,7 @@ const FormLogin = () => {
       )}
       <Form className="w-100" onSubmit={handleSubmit}>
         <Row>
-          <Form.Group as={Col} md="6" className="mb-3">
+          <Form.Group className="mb-3">
             <FloatingLabel
               controlId="floatingUsername"
               label="Username address:"
@@ -73,18 +73,6 @@ const FormLogin = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-            </FloatingLabel>
-          </Form.Group>
-          <Form.Group as={Col} md="6" className="mb-3">
-            <FloatingLabel
-              controlId="floatingSelect"
-              label="What is yout occupation? (Optional)"
-            >
-              <Form.Select aria-label="Selecione uma opção">
-                <option value="">Select...</option>
-                <option value="ADM">Administrator</option>
-                <option value="USER">User</option>
-              </Form.Select>
             </FloatingLabel>
           </Form.Group>
         </Row>
