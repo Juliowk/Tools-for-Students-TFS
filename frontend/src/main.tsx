@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import LoginComponent from "./components/Login/login.tsx";
 import HomeComponent from "./components/Home/home.tsx";
+import RegisterComponent from "./components/Register/register.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <HomeComponent />,
+  },
+  {
+    path: "/register",
+    element: <RegisterComponent />,
   },
 ]);
 
