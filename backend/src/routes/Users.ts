@@ -26,7 +26,7 @@ routerUsers.post("/login", async (req, res) => {
   res.status(statusCode).json(body);
 });
 
-routerUsers.post("/create", AuthMiddleware, async (req, res) => {
+routerUsers.post("/create", async (req, res) => {
   const repository = new CreateRepository();
   const controller = new CreateController(repository);
   const { statusCode, body } = await controller.handle(req);
