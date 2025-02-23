@@ -10,7 +10,7 @@ const Mobile = () => {
       </Row>
       <Row>
         <p className="text-center fs-1">
-          Register <IoPersonAddSharp />
+          Register <IoPersonAddSharp size={20}/>
         </p>
       </Row>
       <Row className="d-flex justify-content-center mt-3">

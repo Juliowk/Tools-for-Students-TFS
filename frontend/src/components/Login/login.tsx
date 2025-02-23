@@ -1,4 +1,4 @@
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import ContentsMobile from "./mobile";
 import ContentsDesktop from "./desktop";
@@ -17,7 +17,18 @@ function LoginComponent() {
   }, []);
 
   return (
-    <Container>{isMobile ? <ContentsMobile /> : <ContentsDesktop />}</Container>
+    <Container>
+      {isMobile ? (
+        <>
+          <ContentsMobile />
+        </>
+      ) : (
+        <>
+          <ContentsDesktop />
+          <p className="fs-5 text-center mb-5">Don't have an anccount? <a href="/register">Register</a></p>
+        </>
+      )}
+    </Container>
   );
 }
 
