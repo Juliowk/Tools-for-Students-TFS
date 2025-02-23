@@ -26,7 +26,7 @@ const FormLogin = () => {
     };
 
     try {
-      const response = await fetch(`${url}/users/login`, {
+      const response = await fetch(`${url}/users/login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
