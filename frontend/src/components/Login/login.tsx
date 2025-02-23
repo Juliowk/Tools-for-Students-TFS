@@ -21,11 +21,16 @@ function LoginComponent() {
       {isMobile ? (
         <>
           <ContentsMobile />
+          <p className="fs-5 text-center mb-5">
+            Don't have an anccount? <a href="/register">Register</a>
+          </p>
         </>
       ) : (
         <>
           <ContentsDesktop />
-          <p className="fs-5 text-center mb-5">Don't have an anccount? <a href="/register">Register</a></p>
+          <p className="fs-5 text-center mb-5">
+            Don't have an anccount? <a href="/register">Register</a>
+          </p>
         </>
       )}
     </Container>

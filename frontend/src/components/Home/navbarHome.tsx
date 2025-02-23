@@ -11,10 +11,10 @@ const NavbarHome = () => {
       <Navbar>
         <Container>
           <Nav className="ms-auto">
-            <Nav.Link onClick={logout} href="/register">
+            <Nav.Link href="/register">
               <IoPersonAddSharp size={30} /> Register
             </Nav.Link>
-            <Nav.Link onClick={logout} href="/">
+            <Nav.Link href="/" onClick={logout}>
               <TbLogout2 size={30} /> Logout
             </Nav.Link>
           </Nav>
