@@ -43,7 +43,7 @@ const FormRegister = () => {
         throw new Error(data);
       }
 
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
