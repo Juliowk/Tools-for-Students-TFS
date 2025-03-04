@@ -5,7 +5,7 @@ const HomeMobile = () => {
   return (
     <>
       <Row className="mt-5 justify-content-center">
-        <img className="" src="/usersImage.svg" />
+        <img src="/usersImage.svg" />
       </Row>
       <Row>
         <UserListMobile />

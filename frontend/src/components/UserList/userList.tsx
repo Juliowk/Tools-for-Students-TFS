@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import HomeDesktop from "./desktop";
 import HomeMobile from "./mobile";
-import NavbarHome from "./navbarHome";
+import NavbarHome from "../Navbar/navbarHome";
 
 const HomeComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
