@@ -43,7 +43,7 @@ const FormRegister = () => {
         throw new Error(data);
       }
 
-      navigate("/");
+      navigate(import.meta.env.VITE_URL_PAGE_LOGIN);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);

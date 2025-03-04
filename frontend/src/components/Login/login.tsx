@@ -29,7 +29,8 @@ function LoginComponent() {
         <>
           <ContentsDesktop />
           <p className="fs-5 text-center mb-5">
-            Don't have an anccount? <a href="/register">Register</a>
+            Don't have an anccount?{" "}
+            <a href={import.meta.env.VITE_URL_PAGE_REGISTER}>Register</a>
           </p>
         </>
       )}

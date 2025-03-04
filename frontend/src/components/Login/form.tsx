@@ -45,7 +45,7 @@ const FormLogin = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("tokenexpiration", expirationTime.toString());
 
-      navigate("/home");
+      navigate(import.meta.env.VITE_URL_PAGE_HOME);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);

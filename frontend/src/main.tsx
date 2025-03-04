@@ -14,11 +14,15 @@ const router = createBrowserRouter([
     element: <LoginComponent />,
   },
   {
-    path: "/home",
+    path: import.meta.env.VITE_URL_PAGE_LOGIN,
+    element: <LoginComponent />,
+  },
+  {
+    path: import.meta.env.VITE_URL_PAGE_HOME,
     element: <HomeComponent />,
   },
   {
-    path: "/register",
+    path: import.meta.env.VITE_URL_PAGE_REGISTER,
     element: <RegisterComponent />,
   },
 ]);
