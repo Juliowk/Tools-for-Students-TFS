@@ -1,7 +1,7 @@
 import { Row } from "react-bootstrap";
 import UserListDesktop from "./userListDesktop";
 
-const HomeDesktop = () => {
+const Desktop = () => {
   return (
     <>
       <Row className="mt-5 justify-content-center">
@@ -14,4 +14,4 @@ const HomeDesktop = () => {
   );
 };
 
-export default HomeDesktop;
+export default Desktop;

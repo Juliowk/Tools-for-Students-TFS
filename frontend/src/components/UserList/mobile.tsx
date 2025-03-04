@@ -1,7 +1,7 @@
 import { Row } from "react-bootstrap";
 import UserListMobile from "./userListMobile";
 
-const HomeMobile = () => {
+const Mobile = () => {
   return (
     <>
       <Row className="mt-5 justify-content-center">
@@ -14,4 +14,4 @@ const HomeMobile = () => {
   );
 };
 
-export default HomeMobile;
+export default Mobile;

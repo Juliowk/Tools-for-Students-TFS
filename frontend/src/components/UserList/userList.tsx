@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import HomeDesktop from "./desktop";
-import HomeMobile from "./mobile";
 import NavbarHome from "../Navbar/navbarHome";
+import Mobile from "./mobile";
+import Desktop from "./desktop";
 
-const HomeComponent = () => {
+const UserListComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -22,16 +22,16 @@ const HomeComponent = () => {
       {isMobile ? (
         <>
           <NavbarHome />
-          <HomeMobile />
+          <Mobile />
         </>
       ) : (
         <>
           <NavbarHome />
-          <HomeDesktop />
+          <Desktop />
         </>
       )}
     </Container>
   );
 };
 
-export default HomeComponent;
+export default UserListComponent;
