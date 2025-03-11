@@ -1,30 +1,21 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { IoPersonAddSharp } from "react-icons/io5";
-import { TbLogout2 } from "react-icons/tb";
+import { useEffect, useState } from "react";
+import Desktop from "./desktop";
+import Mobile from "./mobile";
 
-const NavbarHome = () => {
-  const logout = () => {
-    localStorage.clear();
-  };
-  return (
-    <>
-      <Navbar>
-        <Container>
-          <Nav className="ms-auto">
-            <Nav.Link href={import.meta.env.VITE_URL_PAGE_REGISTER}>
-              <IoPersonAddSharp size={30} /> Register
-            </Nav.Link>
-            <Nav.Link
-              href={import.meta.env.VITE_URL_PAGE_LOGIN}
-              onClick={logout}
-            >
-              <TbLogout2 size={30} /> Logout
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
-  );
+const NavbarComponent = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return <>{isMobile ? <Mobile /> : <Desktop />}</>;
 };
 
-export default NavbarHome;
+export default NavbarComponent;
