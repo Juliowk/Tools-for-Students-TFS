@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Desktop from "./desktop";
 import Mobile from "./mobile";
+import { Container } from "react-bootstrap";
 
 const NavbarComponent = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -15,7 +16,11 @@ const NavbarComponent = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <>{isMobile ? <Mobile /> : <Desktop />}</>;
+  return (
+    <>
+      <Container>{isMobile ? <Mobile /> : <Desktop />}</Container>
+    </>
+  );
 };
 
 export default NavbarComponent;
