@@ -9,34 +9,33 @@ const Desktop = () => {
 
   return (
     <>
-      <Navbar expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="/" className="btn fs-2">
+      <Navbar expand="lg" className="align-items-center">
+        <Container
+          fluid
+          className="d-flex justify-content-between align-items-center"
+        >
+          <Navbar.Brand href="/" className="fs-2">
             Tools For Students
           </Navbar.Brand>
 
-          <Nav>
+          <Nav className="d-flex align-items-center gap-2">
             <Nav.Link
-              className="mx-2"
               href={import.meta.env.VITE_URL_PAGE_LOGIN}
               onClick={logout}
             >
-              <p className="btn btn-outline-dark">
+              <p className="btn btn-outline-dark m-0 d-flex align-items-center gap-1">
                 <TbLogout2 size={30} /> Logout
               </p>
             </Nav.Link>
 
-            <Nav.Link
-              className="mx-2"
-              href={import.meta.env.VITE_URL_PAGE_REGISTER}
-            >
-              <p className="btn btn-outline-dark">
+            <Nav.Link href={import.meta.env.VITE_URL_PAGE_REGISTER}>
+              <p className="btn btn-outline-dark m-0 d-flex align-items-center gap-1">
                 <IoPersonAddOutline size={30} /> Register
               </p>
             </Nav.Link>
 
-            <Nav.Link className="mx-2" target="_blank" href={import.meta.env.VITE_URL_GITHUB}>
-              <p className="btn btn-outline-dark">
+            <Nav.Link target="_blank" href={import.meta.env.VITE_URL_GITHUB}>
+              <p className="btn btn-outline-dark m-0 d-flex align-items-center gap-1">
                 <TbBrandGithub size={30} /> GitHub
               </p>
             </Nav.Link>

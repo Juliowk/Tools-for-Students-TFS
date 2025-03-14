@@ -13,12 +13,12 @@ const Mobile = () => {
 
   return (
     <>
-      <Navbar>
+      <Navbar className="py-3">
         <Container className="d-flex justify-content-between align-items-center">
-          <Navbar.Brand className="fs-1 mt-4 text-center ms-5">
+          <Navbar.Brand className="fs-2 text-center">
             Tools For Students
           </Navbar.Brand>
-          <div className="mt-4" onClick={() => setOpen(!open)}>
+          <div onClick={() => setOpen(!open)}>
             <SlOptionsVertical size={25} />
           </div>
         </Container>
@@ -47,7 +47,11 @@ const Mobile = () => {
                 </p>
               </Nav.Link>
 
-              <Nav.Link className="mx-2" target="_blank" href={import.meta.env.VITE_URL_GITHUB}>
+              <Nav.Link
+                className="mx-2"
+                target="_blank"
+                href={import.meta.env.VITE_URL_GITHUB}
+              >
                 <p className="btn btn-outline-dark">
                   <TbBrandGithub size={30} /> GitHub
                 </p>
