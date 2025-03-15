@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginComponent from "./components/Login/login.tsx";
 import RegisterComponent from "./components/Register/register.tsx";
 import UserListComponent from "./components/UserList/userList.tsx";
-import HomeComponent from "./components/Home/home.tsx";
+import HomeComponent from "./components/Index/home.tsx";
 
 const router = createBrowserRouter([
   {
