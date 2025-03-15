@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const WelcomeComponent = () => {
   return (
-    <Container className="bg-body-tertiary" fluid>
+    <Container className="bg-body-tertiary rounded" fluid>
       <Row className="align-items-center">
         <Col xs={12} md={6} className="d-flex justify-content-center">
           <img style={{ width: "90%" }} src="./homeImage.svg" />
