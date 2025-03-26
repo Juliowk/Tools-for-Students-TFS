@@ -4,6 +4,7 @@ import NavbarComponent from "../Navbar/navbarHome";
 import WelcomeComponent from "./WelcomeComponent/section";
 import ToolsComponents from "./ToolsComponent/tools";
 import AISuggestionComponent from "./AISuggestion/AISuggestion";
+import FooterComponent from "./Footer/footer";
 
 const HomeComponent = () => {
   return (
@@ -12,6 +13,7 @@ const HomeComponent = () => {
       <WelcomeComponent />
       <ToolsComponents />
       <AISuggestionComponent />
+      <FooterComponent />
     </Container>
   );
 };
