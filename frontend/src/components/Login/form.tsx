@@ -3,6 +3,7 @@ import { Alert, Button, Col, FloatingLabel, Form, Row } from "react-bootstrap";
 import { BiError } from "react-icons/bi";
 import { CiLogin } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
+import { DecodingTimeExp } from "./decodingTime";
 
 const FormLogin = () => {
   const [name, setName] = useState("");
@@ -40,10 +41,14 @@ const FormLogin = () => {
       }
 
       const token = await response.json();
-      const expirationTime = Date.now() + 3600000;
+      const expiration = DecodingTimeExp(token);
+
+      if (expiration) {
+        console.log(`Seu token expira em: ${expiration.toLocaleString()}`);
+        localStorage.setItem("expirationDate", expiration.getTime().toString());
+      }
 
       localStorage.setItem("token", token);
-      localStorage.setItem("tokenexpiration", expirationTime.toString());
 
       navigate(import.meta.env.VITE_URL_PAGE_HOME);
     } catch (error) {

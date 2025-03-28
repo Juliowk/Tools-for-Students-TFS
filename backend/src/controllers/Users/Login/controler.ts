@@ -57,6 +57,7 @@ export class LoginController implements IController {
         statusCode: HttpStatusCode.OK,
         body: token,
       };
+      
     } catch (error) {
       if (error instanceof Error) {
         return {

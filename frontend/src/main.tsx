@@ -11,7 +11,7 @@ import HomeComponent from "./components/Index/home.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: import.meta.env.VITE_URL_PAGE_HOME,
     element: <HomeComponent />,
   },
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <LoginComponent />,
   },
   {
-    path: import.meta.env.VITE_URL_PAGE_HOME,
+    path: import.meta.env.VITE_URL_PAGE_USER_LIST,
     element: <UserListComponent />,
   },
   {
