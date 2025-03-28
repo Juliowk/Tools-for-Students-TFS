@@ -22,7 +22,7 @@ const WelcomeComponent = () => {
               platforms on the internet.
             </p>
             <p className="lead mt-4">
-              <a className="btn btn-outline-dark btn-lg" role="button">
+              <a className="btn btn-outline-dark btn-lg" href="#youtHistory" role="button">
                 Start your studies
               </a>
             </p>

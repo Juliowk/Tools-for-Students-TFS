@@ -6,7 +6,7 @@ import { GiEarthAmerica } from "react-icons/gi";
 const Mobile = () => {
   return (
     <>
-      <p className="fs-1 text-end">
+      <p className="fs-1 text-end" id="youtHistory">
         Your History <BsClockHistory />{" "}
       </p>
       <Accordion>

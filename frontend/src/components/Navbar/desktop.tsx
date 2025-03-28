@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { CiCircleList } from "react-icons/ci";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { TbBrandGithub, TbLogout2 } from "react-icons/tb";
 
@@ -31,6 +32,14 @@ const Desktop = () => {
             <Nav.Link href={import.meta.env.VITE_URL_PAGE_REGISTER}>
               <p className="btn btn-outline-dark m-0 d-flex align-items-center gap-1">
                 <IoPersonAddOutline size={30} /> Register
+              </p>
+            </Nav.Link>
+
+            <Nav.Link
+              href={import.meta.env.VITE_URL_PAGE_USER_LIST}
+            >
+              <p className="btn btn-outline-dark m-0 d-flex align-items-center gap-1">
+                <CiCircleList size={30} /> Users List
               </p>
             </Nav.Link>
 

@@ -47,6 +47,15 @@ const Mobile = () => {
                 </p>
               </Nav.Link>
 
+              {/* <Nav.Link
+                className="mx-2"
+              href={import.meta.env.VITE_URL_PAGE_USER_LIST}
+              >
+                <p className="btn btn-outline-dark">
+                  <CiCircleList size={30} /> Users
+                </p>
+              </Nav.Link> */}
+
               <Nav.Link
                 className="mx-2"
                 target="_blank"

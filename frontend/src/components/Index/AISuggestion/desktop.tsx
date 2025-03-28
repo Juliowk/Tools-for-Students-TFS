@@ -15,32 +15,35 @@ export const DesktopCol = () => {
         </p>
 
         <p className="lead mt-5">
-          <a className="btn btn-outline-dark btn-lg w-100 text-center" role="button">
+          <a
+            className="btn btn-outline-dark btn-lg w-100 text-center"
+            href="#IASuggestions"
+            role="button"
+          >
             Discover the recommended ones!
           </a>
         </p>
-        
       </div>
     </Col>
   );
 };
 
 export const DesktopIaSuggestions = () => {
-    return (
-      <Row xs={1} md={4} className="g-4">
-        {Array.from({ length: 4 }).map((_, idx) => (
-          <Col key={idx}>
-            <div className="ratio ratio-1x1">
-              <Card className="bg-body-tertiary shadow">
-                <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                  <Card.Title className="fs-1">
-                    <FaRegLightbulb size={50} />
-                  </Card.Title>
-                </Card.Body>
-              </Card>
-            </div>
-          </Col>
-        ))}
-      </Row>
-    );
-}
+  return (
+    <Row xs={1} md={4} className="g-4" id="IASuggestions">
+      {Array.from({ length: 4 }).map((_, idx) => (
+        <Col key={idx}>
+          <div className="ratio ratio-1x1">
+            <Card className="bg-body-tertiary shadow">
+              <Card.Body className="d-flex flex-column justify-content-center align-items-center">
+                <Card.Title className="fs-1">
+                  <FaRegLightbulb size={50} />
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </div>
+        </Col>
+      ))}
+    </Row>
+  );
+};
