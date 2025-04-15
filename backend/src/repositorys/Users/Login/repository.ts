@@ -4,10 +4,10 @@ import { collections } from "../../../helpers/collections.js";
 import { User } from "../../../models/User.js";
 
 export class LoginRepository implements ILoginRepository {
-  async findUser(name: string): Promise<User | null> {
+  async findUser(email: string): Promise<User | null> {
     const user = await MongoConnect.db
       .collection<User>(collections.users)
-      .findOne({ name });
+      .findOne({ email });
     return user;
   }
 }

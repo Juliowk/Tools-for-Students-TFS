@@ -8,6 +8,7 @@ const environment_variables = {
   nameDefault: process.env.NAMEDEFAULT,
   passwordDefault: process.env.PASSWORDDEFAULT,
   JWT_SECRET: process.env.JWT_SECRET,
+  emailDefault: process.env.EMAILDEFAULT,
 };
 
 export default environment_variables;

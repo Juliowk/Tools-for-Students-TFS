@@ -19,6 +19,7 @@ const main = async () => {
   const userDefault: Omit<User, "_id"> = {
     name: environment_variables.nameDefault!,
     password: environment_variables.passwordDefault!,
+    email: environment_variables.emailDefault!,
     occupation: "ADM",
   };
 

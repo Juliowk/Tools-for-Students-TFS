@@ -1,3 +1,4 @@
+import { z } from "zod";
 import bcrypt from "bcrypt";
 
 import {
@@ -9,7 +10,12 @@ import {
 
 import { ILoginRepository, UserParams } from "./protocols.js";
 import { createToken } from "../../../helpers/createToken.js";
+import { formatErrorMessage } from "../../../helpers/formatErrorsMessages.js";
 
+const loginSchema = z.object({
+  email: z.string().email("Invalid e-mail"),
+  password: z.string().min(6, "Name must not be empty."),
+});
 export class LoginController implements IController {
   constructor(private readonly repository: ILoginRepository) {}
   async handle(
@@ -22,21 +28,30 @@ export class LoginController implements IController {
           body: "Request body not provided.",
         };
       }
-      const { name, password } = httpRequest.body;
+      const validation = loginSchema.safeParse(httpRequest.body);
 
-      if (!name || !password) {
+      if (!validation.success) {
         return {
           statusCode: HttpStatusCode.BAD_REQUEST,
-          body: "Username or password not provided.",
+          body: formatErrorMessage(validation.error.format()),
         };
       }
 
-      const user = await this.repository.findUser(name);
+      const { email, password } = httpRequest.body;
+
+      if (!email || !password) {
+        return {
+          statusCode: HttpStatusCode.BAD_REQUEST,
+          body: "Email or password not provided.",
+        };
+      }
+
+      const user = await this.repository.findUser(email);
 
       if (!user) {
         return {
           statusCode: HttpStatusCode.UNAUTHORIZED,
-          body: "Invalid username or password.",
+          body: "Invalid email or password.",
         };
       }
 
@@ -45,7 +60,7 @@ export class LoginController implements IController {
       if (!passwordVerifield) {
         return {
           statusCode: HttpStatusCode.UNAUTHORIZED,
-          body: "Invalid username or password.",
+          body: "Invalid email or password.",
         };
       }
 
@@ -57,7 +72,6 @@ export class LoginController implements IController {
         statusCode: HttpStatusCode.OK,
         body: token,
       };
-      
     } catch (error) {
       if (error instanceof Error) {
         return {
