@@ -7,7 +7,7 @@ import { collections } from "../../../helpers/collections.js";
 import { User } from "../../../models/User.js";
 
 export class CreateRepository implements ICreateRepository {
-  async verifyUser(name: string): Promise<boolean> {
+  async verifyUsername(name: string): Promise<boolean> {
     const user = await MongoConnect.db
       .collection(collections.users)
       .findOne({ name });
@@ -16,6 +16,17 @@ export class CreateRepository implements ICreateRepository {
 
     return true;
   }
+
+  async verifyUserEmail(email: string): Promise<boolean> {
+    const user = await MongoConnect.db
+      .collection(collections.users)
+      .findOne({ email });
+
+    if (!user) return false;
+
+    return true;
+  }
+
   async createUser(params: createParams): Promise<User> {
     const { insertedId } = await MongoConnect.db
       .collection(collections.users)

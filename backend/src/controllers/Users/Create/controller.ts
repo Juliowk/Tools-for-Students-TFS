@@ -15,6 +15,7 @@ const createSchema = z.object({
   name: z.string().nonempty("Name must not be empty."),
   password: z.string().min(6, "Name must not be empty."),
   occupation: z.string().nonempty("Occupation must not be empty."),
+  email: z.string().email("Invalid e-mail"),
 });
 
 export class CreateController implements IController {
@@ -39,14 +40,23 @@ export class CreateController implements IController {
         };
       }
 
-      const { name, password, occupation } = httpRequest.body;
+      const { name, password, occupation, email } = httpRequest.body;
 
-      const userExist = await this.repository.verifyUser(name);
+      const userNameExist = await this.repository.verifyUsername(name);
 
-      if (userExist) {
+      if (userNameExist) {
         return {
           statusCode: HttpStatusCode.BAD_REQUEST,
-          body: "User already exists.",
+          body: "Username already exists.",
+        };
+      }
+
+      const userEmailExist = await this.repository.verifyUserEmail(email);
+
+      if (userEmailExist) {
+        return {
+          statusCode: HttpStatusCode.BAD_REQUEST,
+          body: "Email already in use.",
         };
       }
 
@@ -56,6 +66,7 @@ export class CreateController implements IController {
         name,
         password: encryptedPassword,
         occupation,
+        email,
       });
 
       if (!userCreated) throw new Error("User not created.");
