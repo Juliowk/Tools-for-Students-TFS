@@ -5,6 +5,7 @@ import { CiLogin } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 
 const FormRegister = () => {
+  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -22,6 +23,7 @@ const FormRegister = () => {
 
     const body = {
       name,
+      email,
       password,
       occupation: "USER",
     };
@@ -61,15 +63,24 @@ const FormRegister = () => {
       <Form onSubmit={handleSubmit} className="mb-5">
         <Row>
           <Form.Group as={Col} className="mb-3">
-            <FloatingLabel
-              controlId="floatingUsername"
-              label="Username address:"
-            >
+            <FloatingLabel controlId="floatingUsername" label="Username:">
               <Form.Control
                 type="text"
-                placeholder="Username:"
+                placeholder="UserName:"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+              />
+            </FloatingLabel>
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group as={Col} className="mb-3">
+            <FloatingLabel controlId="floatingUsername" label="Email address:">
+              <Form.Control
+                type="text"
+                placeholder="Email:"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </FloatingLabel>
           </Form.Group>

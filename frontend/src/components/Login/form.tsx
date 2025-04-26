@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { DecodingTimeExp } from "./decodingTime";
 
 const FormLogin = () => {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -22,7 +22,7 @@ const FormLogin = () => {
         : import.meta.env.VITE_URL_BACKEND_DEV;
 
     const body = {
-      name,
+      email,
       password,
     };
 
@@ -70,13 +70,13 @@ const FormLogin = () => {
           <Form.Group className="mb-3">
             <FloatingLabel
               controlId="floatingUsername"
-              label="Username address:"
+              label="Email address:"
             >
               <Form.Control
                 type="text"
-                placeholder="Username:"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                placeholder="Email adress:"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </FloatingLabel>
           </Form.Group>
