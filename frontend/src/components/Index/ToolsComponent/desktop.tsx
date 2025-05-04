@@ -4,7 +4,7 @@ import { CiCalculator2 } from "react-icons/ci";
 import { FaRegLightbulb } from "react-icons/fa";
 import { GiEarthAmerica } from "react-icons/gi";
 
-import "./tools.css";
+import "./flipcard.css";
 
 const Desktop = () => {
   return (
