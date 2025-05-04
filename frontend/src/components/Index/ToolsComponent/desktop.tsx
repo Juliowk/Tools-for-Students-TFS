@@ -1,5 +1,5 @@
 import { Card, Col, Row } from "react-bootstrap";
-import { BsChatLeftText, BsClockHistory } from "react-icons/bs";
+import { BsChatLeftText } from "react-icons/bs";
 import { CiCalculator2 } from "react-icons/ci";
 import { FaRegLightbulb } from "react-icons/fa";
 import { GiEarthAmerica } from "react-icons/gi";
@@ -9,7 +9,7 @@ import "./flipcard.css";
 const Desktop = () => {
   return (
     <>
-      <p className="fs-1 text-end" id="youtHistory">
+      {/* <p className="fs-1 text-end" id="youtHistory">
         Your History <BsClockHistory />
       </p>
       <Row xs={1} md={4} className="g-4">
@@ -28,7 +28,7 @@ const Desktop = () => {
         ))}
       </Row>
 
-      <hr className="w-50 mx-auto mt-5" />
+      <hr className="w-50 mx-auto mt-5" /> */}
 
       <p className="fs-1">
         Mathematics <CiCalculator2 />

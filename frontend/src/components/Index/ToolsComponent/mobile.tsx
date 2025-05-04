@@ -1,5 +1,5 @@
 import { Accordion, Button, Card, Col, Row } from "react-bootstrap";
-import { BsChatLeftText, BsClockHistory } from "react-icons/bs";
+import { BsChatLeftText } from "react-icons/bs";
 import { CiCalculator2 } from "react-icons/ci";
 import { GiEarthAmerica } from "react-icons/gi";
 
@@ -10,7 +10,7 @@ import { FaRegLightbulb } from "react-icons/fa";
 const Mobile = () => {
   return (
     <>
-      <p className="fs-1 text-end" id="youtHistory">
+      {/* <p className="fs-1 text-end" id="youtHistory">
         Your History <BsClockHistory />{" "}
       </p>
       <Accordion>
@@ -36,7 +36,7 @@ const Mobile = () => {
         </Accordion.Item>
       </Accordion>
 
-      <hr className="w-50 mx-auto my-4" />
+      <hr className="w-50 mx-auto my-4" /> */}
       <p className="fs-1">
         Mathematics <CiCalculator2 />
       </p>
